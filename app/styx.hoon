@@ -24,7 +24,6 @@
   =.  state  default-state:lib
   :_  this
   :~  [%pass /eyre/connect %arvo %e %connect [~ /styx] %styx]
-      [%pass /groups %agent [our.bowl %groups] %watch /groups/ui]
   ==
 ::
 ++  on-save
@@ -488,7 +487,6 @@
       "<p><b>Styx is a dead man's switch.</b> If you stop using your ship, it will deliver all your cargo to the recipients you specify.</p>"
       "<p><b>The Timer:</b> Activity that resets your timer:</p>"
       "<ul style='margin:0.5rem 0'>"
-      "<li>Sending messages or reactions in Groups</li>"
       "<li>Visiting this page</li>"
       "<li>Clicking 'I Yet Live'</li>"
       "</ul>"
