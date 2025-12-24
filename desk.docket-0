@@ -1,0 +1,12 @@
+::  docket file for %styx
+::
+:~
+  title+'Styx'
+  info+'A dead man\'s switch for Urbit'
+  color+0xe9.4560
+  version+[0 1 0]
+  website+'https://github.com/gitwormq/styx'
+  license+'MIT'
+  base+'styx'
+  glob-http+['https://github.com/gitwormq/styx' 0v0]
+==
