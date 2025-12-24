@@ -101,11 +101,6 @@ Settings are global—they apply to all cargo. When the switch fires, ALL cargo 
 
 **Your ship must be running for the timer to work.** If your ship is off, the timer doesn't advance.
 
-For reliability, use always-on hosting:
-- Native Planet
-- Red Horizon
-- Your own server
-
 ## Features
 
 - [x] Passive obols (auto-ping on activity)
