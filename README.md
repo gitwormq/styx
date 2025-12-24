@@ -8,27 +8,15 @@ Unlike Web2 dead man's switches that rely on centralized servers, Styx is peer-t
 
 ## Installation
 
-### From a distributor ship
 ```hoon
 |install ~dovfeb %styx
 ```
 
-### From source
-```hoon
-|merge %styx our %base
-|mount %styx
-```
-
-Copy this repo's files to your pier's `styx/` folder, then:
-
-```hoon
-|commit %styx
-|install our %styx
-```
+Or search for `~dovfeb` in **Get Urbit Apps** from your Landscape home screen.
 
 ## Quick Start
 
-1. Visit `https://your-ship.urbit.org/styx`
+1. Visit `/styx` on your ship (or click the tile)
 2. Click **Enable** to activate the switch
 3. Add cargo (messages to deliver)
 4. Use your ship normally - the timer auto-resets
@@ -38,7 +26,7 @@ Copy this repo's files to your pier's `styx/` folder, then:
 ```
 PEACEFUL ──(60 days no activity)──> WARNING ──(72 hours)──> CROSSED
     ^                                    |
-    └────── any activity ────────────────┘
+    └────────── any activity ────────────┘
 ```
 
 **Activity that resets your timer:**
@@ -47,6 +35,8 @@ PEACEFUL ──(60 days no activity)──> WARNING ──(72 hours)──> CROS
 - Clicking "I Yet Live"
 
 **When the switch fires:** All your cargo is delivered to recipients via Ames.
+
+**Important:** Recipients must also have Styx installed to receive deliveries.
 
 ## Web UI
 
@@ -95,7 +85,7 @@ Access at `/styx` on your ship. Features:
 | Inactivity Period | 60 days | Time before warning phase |
 | Grace Period | 72 hours | Warning duration before delivery |
 
-Settings are global—they apply to all cargo. When the switch fires, ALL cargo is delivered at once.
+Settings are global and apply to all cargo. When the switch fires, ALL cargo is delivered at once.
 
 ## Important: Always-On Hosting
 
@@ -114,7 +104,7 @@ Settings are global—they apply to all cargo. When the switch fires, ALL cargo 
 ## Architecture
 
 ```
-styx-desk/
+styx/
 ├── app/styx.hoon    # Main Gall agent
 ├── sur/styx.hoon    # Type definitions
 ├── lib/styx.hoon    # Helper library
@@ -137,7 +127,5 @@ styx-desk/
 ## License
 
 MIT
-
----
 
 *"For in that sleep of death what dreams may come..."*
