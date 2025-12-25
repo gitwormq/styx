@@ -514,7 +514,7 @@
       "</ul>"
       "<p><b>Warning Phase:</b> After {<rw-days>} days of no activity, you enter warning. You then have {<gp-hours>} hours to show activity or all cargo is delivered.</p>"
       "<p><b>Settings:</b> The timer settings above are global - they apply to your entire switch, not individual cargo items. When the switch fires, ALL cargo is delivered at once.</p>"
-      "<p style='color:#ff9f1c'><b>Important:</b> Your ship must be running for the timer to work. Use always-on hosting for reliability.</p>"
+      "<p style='color:#ff9f1c'><b>Important:</b> Your ship must be running for the timer to work. Recipients must also have Styx installed to receive cargo.</p>"
       "</div></section>"
       "</div></body></html>"
     ==
