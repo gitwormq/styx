@@ -30,6 +30,7 @@ PEACEFUL ──(60 days no activity)──> WARNING ──(72 hours)──> CROS
 ```
 
 **Activity that resets your timer:**
+- Using Groups (messages, reactions)
 - Visiting the Styx web UI
 - Clicking "I Yet Live"
 
@@ -92,14 +93,14 @@ Settings are global and apply to all cargo. When the switch fires, ALL cargo is 
 
 ## Features
 
-- [x] Passive obols (auto-ping on page visit)
+- [x] Passive obols (auto-ping on activity)
+- [x] Groups integration (resets timer on chat activity)
 - [x] Web UI with settings
 - [x] Message cargo
 - [x] Health checks and diagnostics
 - [x] Test delivery mode
 - [x] Roundtrip self-test
 - [ ] File cargo (backend ready, UI coming)
-- [ ] Groups integration (coming soon)
 
 ## Architecture
 

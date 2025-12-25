@@ -83,7 +83,9 @@
         %enable
       =.  enabled.config.state  %.y
       =.  crossing-status.state  [%peaceful ~]
-      (make-timer-cards ~)
+      ::  subscribe to groups for passive obols
+      =/  groups-card=card  [%pass /groups %agent [our.bowl %groups] %watch /groups/ui]
+      (make-timer-cards [groups-card]~)
     ::
         %disable
       =.  enabled.config.state  %.n
@@ -487,6 +489,7 @@
       "<p><b>Styx is a dead man's switch.</b> If you stop using your ship, it will deliver all your cargo to the recipients you specify.</p>"
       "<p><b>The Timer:</b> Activity that resets your timer:</p>"
       "<ul style='margin:0.5rem 0'>"
+      "<li>Using Groups (messages, reactions)</li>"
       "<li>Visiting this page</li>"
       "<li>Clicking 'I Yet Live'</li>"
       "</ul>"
