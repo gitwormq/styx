@@ -604,7 +604,10 @@
     ?:  (should-warn:lib now.bowl config.state last-obol.state crossing-status.state)
       =.  crossing-status.state  [%warning now.bowl]
       =.  crossing-time.state  `(add now.bowl grace-period.config.state)
-      `this
+      ~&  >  "entering warning phase, crossing in {<grace-period.config.state>}"
+      ::  schedule timer for crossing
+      :_  this
+      [[%pass /timer %arvo %b %wait (add now.bowl grace-period.config.state)]]~
     `this
   ==
 ::
