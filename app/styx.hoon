@@ -436,6 +436,25 @@
     ::  compute current settings in human units
     =/  rw-days=@ud  (div river-width.config.st ~d1)
     =/  gp-hours=@ud  (div grace-period.config.st ~h1)
+    ::  compute status subtitle
+    =/  status-sub=tape
+      ?+  crossing-status.st  ""
+          [%disabled ~]
+        "Enable to start protection"
+      ::
+          [%peaceful ~]
+        "Timer reset just now. Warning after {<rw-days>} days."
+      ::
+          [%warning *]
+        =/  remaining=(unit @dr)  (time-until-crossing:lib now crossing-time.st)
+        ?~  remaining
+          "Crossing imminent!"
+        =/  hrs=@ud  (div u.remaining ~h1)
+        "Crossing in {<hrs>} hours! Click 'I Yet Live' to cancel."
+      ::
+          [%crossed *]
+        "Your cargo has been delivered."
+      ==
     ;:  weld
       "<!DOCTYPE html><html><head><meta charset='utf-8'>"
       "<title>styx</title><style>"
@@ -455,7 +474,7 @@
       (trip '.submit{background:#e94560;color:#fff}')
       "</style></head><body><div class='container'>"
       "<h1>~~ styx ~~</h1>"
-      "<div class='status'><div class='badge {status-cls}'>{status-txt}</div></div>"
+      "<div class='status'><div class='badge {status-cls}'>{status-txt}</div><p style='margin:0.5rem 0 0 0;color:#8d99ae;font-size:0.9rem'>{status-sub}</p></div>"
       "<section><h2>Actions</h2>"
       "<form method='post' action='/styx/ping' style='display:inline'><button class='ping'>I Yet Live</button></form>"
       toggle-btn
