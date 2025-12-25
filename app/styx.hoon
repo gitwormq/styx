@@ -427,7 +427,7 @@
       "<div style='border:1px solid #4ecca3;padding:0.5rem;margin:0.5rem 0;border-radius:4px'><b>{content-desc}</b>{test-tag}<br>From: {<from.delivery>}</div>"
     =/  delivery-display=tape
       ?:  =(~ delivery-section)
-        "<p style='color:#8d99ae'>No deliveries received yet.</p>"
+        "<p style='color:#8d99ae'>No cargo received yet.</p>"
       delivery-section
     =/  toggle-btn=tape
       ?:  enabled.config.st
@@ -490,7 +490,7 @@
       "<textarea name='body' placeholder='Message' rows='3' required></textarea>"
       "<button type='submit' class='submit'>Add</button>"
       "</form></section>"
-      "<section><h2>Received Deliveries</h2>"
+      "<section><h2>Received Cargo (incoming)</h2>"
       delivery-display
       "</section>"
       ::  settings section
