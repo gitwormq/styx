@@ -606,7 +606,7 @@
       (trip '.toggle-link{color:#4ecca3;cursor:pointer;display:block;font-size:0.8rem;margin-top:0.25rem}')
       (trip '.export{background:#16213e;border:1px solid #4ecca3;color:#4ecca3}')
       "</style>"
-      "<script>function toggleMsg(el)\{var p=el.parentNode;var pre=p.querySelector('.preview');var full=p.querySelector('.full');if(pre.style.display==='none')\{pre.style.display='';full.style.display='none';el.textContent='Show more';\}else\{pre.style.display='none';full.style.display='';el.textContent='Show less';\}\}</script>"
+      (trip '<script>function toggleMsg(e){var p=e.parentNode,r=p.querySelector(".preview"),f=p.querySelector(".full");r.style.display=r.style.display?"":"none";f.style.display=f.style.display?"none":"";e.textContent=f.style.display?"Show more":"Show less"}</script>')
       "</head><body><div class='container'>"
       "<h1>~~ styx ~~</h1>"
       "<div class='status'><div class='badge {status-cls}'>{status-txt}</div><p style='margin:0.5rem 0 0 0;color:#8d99ae;font-size:0.9rem'>{status-sub}</p></div>"
