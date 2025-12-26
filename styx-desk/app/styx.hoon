@@ -349,7 +349,7 @@
     ^-  (quip card _this)
     =/  json  (render-export state now.bowl)
     :_  this
-    (http-response id 200 [['Content-Type' 'application/json'] ['Content-Disposition' 'attachment; filename="styx-cargo.json"']]~ (some json))
+    (http-response id 200 ~[['Content-Type' 'application/json'] ['Content-Disposition' 'attachment; filename="styx-cargo.json"']] (some json))
   ::
   ++  render-export
     |=  [st=state-1 now=@da]
