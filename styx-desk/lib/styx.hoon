@@ -183,6 +183,23 @@
     "\"{(format-date u.acked.cargo)}\""
   :(weld "\{\"id\":\"{<id.cargo>}\",\"recipient\":\"{<recipient.cargo>}\",\"type\":\"{typ}\",\"content\":\"{(json-escape msg)}\",\"created\":\"{(format-date created.cargo)}\",\"acked\":" ack-str "}")
 ::
+::  +delivery-to-json: serialize delivery to JSON string
+::
+++  delivery-to-json
+  |=  =delivery
+  ^-  tape
+  =/  msg=tape
+    ?-  -.delivery-content.delivery
+      %message  (trip body.delivery-content.delivery)
+      %file     (trip name.delivery-content.delivery)
+    ==
+  =/  typ=tape
+    ?-  -.delivery-content.delivery
+      %message  "message"
+      %file     "file"
+    ==
+  :(weld "\{\"from\":\"{<from.delivery>}\",\"type\":\"{typ}\",\"content\":\"{(json-escape msg)}\",\"received\":\"{(format-date sent.delivery)}\",\"is_test\":" ?:(is-test.delivery "true" "false") "}")
+::
 ::  +json-escape: escape special chars for JSON
 ::
 ++  json-escape

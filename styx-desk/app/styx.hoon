@@ -361,9 +361,14 @@
     =/  cargo-json=tape
       ?~  cargo-list  "[]"
       (weld "[" (weld (join-with cargo-list ", ") "]"))
+    =/  delivery-list=(list tape)
+      (turn deliveries.st |=(d=delivery (delivery-to-json:lib d)))
+    =/  delivery-json=tape
+      ?~  delivery-list  "[]"
+      (weld "[" (weld (join-with delivery-list ", ") "]"))
     =/  export-date=tape  (format-date:lib now)
     =/  json=tape
-      :(weld "\{\"exported\":\"{export-date}\",\"ship\":\"{<our.bowl>}\",\"cargo\":" cargo-json "}")
+      :(weld "\{\"exported\":\"{export-date}\",\"ship\":\"{<our.bowl>}\",\"outgoing\":" cargo-json ",\"received\":" delivery-json "}")
     (as-octs:mimes:html (crip json))
   ::
   ++  join-with
@@ -586,6 +591,10 @@
           [%crossed *]
         "Your cargo has been delivered."
       ==
+    =/  has-data=?  |(!=(~ cargos.st) !=(~ deliveries.st))
+    =/  export-btn=tape
+      ?.  has-data  ""
+      "<a href='/styx/export' class='export' style='display:inline-block;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;margin-top:0.5rem'>Export All Data</a>"
     ;:  weld
       "<!DOCTYPE html><html><head><meta charset='utf-8'>"
       "<title>styx</title><style>"
@@ -617,7 +626,7 @@
       "</section>"
       "<section><h2>Your Cargo (outgoing)</h2>"
       cargo-display
-      "<a href='/styx/export' class='export' style='display:inline-block;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;margin-top:0.5rem'>Export Cargo</a>"
+      export-btn
       "</section>"
       "<section><h2>Add Cargo</h2>"
       "<form method='post' action='/styx/cargo'>"
