@@ -187,7 +187,9 @@
     "\"type\":\"{typ}\","
     "\"content\":\"{(json-escape msg)}\","
     "\"created\":\"{(format-date created.cargo)}\","
-    "\"acked\":{ack-str}\}"
+    "\"acked\":"
+    ack-str
+    "\}"
   ==
 ::
 ::  +json-escape: escape special chars for JSON

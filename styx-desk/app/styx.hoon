@@ -366,7 +366,9 @@
       ;:  weld
         "\{\"exported\":\"{export-date}\","
         "\"ship\":\"{<our.bowl>}\","
-        "\"cargo\":{cargo-json}\}"
+        "\"cargo\":"
+        cargo-json
+        "\}"
       ==
     (as-octs:mimes:html (crip json))
   ::
