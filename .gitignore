@@ -1,0 +1,15 @@
+# Urbit ships (local dev)
+zod/
+dovfeb/
+
+# Urbit binary
+urbit
+
+# Test output files
+*.html
+
+# Boot scripts (local)
+boot_and_install.sh
+
+# OS files
+.DS_Store

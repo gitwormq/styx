@@ -1,0 +1,11 @@
+:~
+  title+'Styx'
+  info+'Dead mans switch'
+  color+0xe9.4560
+  image+'https://raw.githubusercontent.com/gitwormq/styx/main/tile.png'
+  site+/styx
+  base+'styx'
+  version+[0 1 0]
+  license+'MIT'
+  website+'https://github.com/gitwormq/styx'
+==
