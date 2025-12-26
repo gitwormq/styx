@@ -181,16 +181,7 @@
   =/  ack-str=tape
     ?~  acked.cargo  "null"
     "\"{(format-date u.acked.cargo)}\""
-  ;:  weld
-    "\{\"id\":\"{<id.cargo>}\","
-    "\"recipient\":\"{<recipient.cargo>}\","
-    "\"type\":\"{typ}\","
-    "\"content\":\"{(json-escape msg)}\","
-    "\"created\":\"{(format-date created.cargo)}\","
-    "\"acked\":"
-    ack-str
-    "\}"
-  ==
+  :(weld "\{\"id\":\"{<id.cargo>}\",\"recipient\":\"{<recipient.cargo>}\",\"type\":\"{typ}\",\"content\":\"{(json-escape msg)}\",\"created\":\"{(format-date created.cargo)}\",\"acked\":" ack-str "}")
 ::
 ::  +json-escape: escape special chars for JSON
 ::

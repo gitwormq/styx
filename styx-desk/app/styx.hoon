@@ -363,13 +363,7 @@
       (weld "[" (weld (join-with cargo-list ", ") "]"))
     =/  export-date=tape  (format-date:lib now)
     =/  json=tape
-      ;:  weld
-        "\{\"exported\":\"{export-date}\","
-        "\"ship\":\"{<our.bowl>}\","
-        "\"cargo\":"
-        cargo-json
-        "\}"
-      ==
+      :(weld "\{\"exported\":\"{export-date}\",\"ship\":\"{<our.bowl>}\",\"cargo\":" cargo-json "}")
     (as-octs:mimes:html (crip json))
   ::
   ++  join-with
