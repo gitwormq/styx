@@ -1,8 +1,7 @@
 :~
   title+'Styx'
-  info+'Dead mans switch'
+  info+'A dead mans switch for Urbit'
   color+0xe9.4560
-  image+'https://raw.githubusercontent.com/gitwormq/styx/main/styx-desk/tile.png'
   site+/styx
   base+'styx'
   version+[0 1 0]
