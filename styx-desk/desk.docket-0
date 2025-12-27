@@ -5,7 +5,7 @@
   image+'https://raw.githubusercontent.com/gitwormq/styx/main/tile.png'
   site+/styx
   base+'styx'
-  version+[0 1 0]
+  version+[0 0 4]
   license+'MIT'
   website+'https://github.com/gitwormq/styx'
 ==
